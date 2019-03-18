@@ -11,3 +11,4 @@
 ## Projects
 
 ## Assignments
+- 03.15. [Assignment 01](https://github.com/snu-sf-class/swpp201901/issues/5) is announced.
