@@ -1,0 +1,89 @@
+{
+  "name": "arc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node server",
+    "test": "cross-env NODE_ENV=test jest",
+    "coverage": "npm test -- --coverage",
+    "postcoverage": "opn coverage/lcov-report/index.html",
+    "lint": "eslint src src-clean .storybook",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build:clean": "rimraf \"dist/!(.git*|Procfile)**\"",
+    "build:copy": "copyfiles -u 1 public/* public/**/* dist",
+    "prebuild": "npm run build:clean && npm run build:copy",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
+  "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/src-clean"
+    ],
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/fileMock.js",
+      "^(components|containers)$": "<rootDir>/test/componentsMock.js",
+      "^(store|\\.\\.)\\/selectors$": "<rootDir>/test/selectorsMock.js",
+      "^(store|\\.\\.)\\/actions$": "<rootDir>/test/actionsMock.js"
+    }
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.35.2",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^19.0.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.3.0",
+    "babel-preset-env": "^1.2.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "copyfiles": "^1.0.0",
+    "cross-env": "^3.1.4",
+    "enzyme": "^2.7.0",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-no-unused-vars-rest": "^1.0.4",
+    "eslint-plugin-react": "^6.9.0",
+    "file-loader": "^0.10.0",
+    "html-webpack-plugin": "^2.26.0",
+    "jest-cli": "^19.0.0",
+    "json-loader": "^0.5.4",
+    "opn-cli": "^3.1.0",
+    "raw-loader": "^0.5.1",
+    "react-addons-test-utils": "^15.4.1",
+    "redux-mock-store": "^1.2.1",
+    "rimraf": "^2.6.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0",
+    "webpack-md5-hash": "^0.0.5"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.20.0",
+    "history": "3.0.0",
+    "lodash": "^4.17.4",
+    "normalizr": "^3.0.1",
+    "query-string": "^4.3.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-modal": "^1.6.5",
+    "react-redux": "^5.0.1",
+    "react-router": "^3.0.0",
+    "react-router-redux": "^4.0.7",
+    "redux": "^3.6.0",
+    "redux-form": "^6.4.3",
+    "redux-saga": "^0.14.1",
+    "styled-components": "^1.2.1",
+    "styled-theme": "^0.3.0",
+    "styled-tools": "^0.1.2",
+    "validator": "^7.0.0",
+    "whatwg-fetch": "^2.0.2"
+  }
+}
