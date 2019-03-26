@@ -6,9 +6,11 @@
         * In the case of sending TA an email, specify sender's name and student ID.  
     + Place: Bldg 302 Rm 312-2 
 
-## Announcements
+## Announcements 
+- 03.27. Please check [the announcement](https://github.com/snu-sf-class/swpp201901/issues/26) on dropping the course.
 
 ## Projects
+- 03.27. There will be a [Project Proposal](https://github.com/snu-sf-class/swpp201901/issues/24) on Apr. 4th.
 
 ## Assignments
 - 03.15. [Assignment 01](https://github.com/snu-sf-class/swpp201901/issues/5) is announced.
